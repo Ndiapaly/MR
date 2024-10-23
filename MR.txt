@@ -1,0 +1,52 @@
+## Copilot
+Pour convertir le modèle de relation d'entité en un modèle relationnel, nous devons suivre les étapes de transformation des entités et des relations en tables relationnelles. Voici le diagramme de relation d'entité fourni :
+ERD Diagram
+Étapes de Conversion- Identifier les entités et leurs attributs
+- Déterminer les clés primaires (PK) pour chaque entité
+- Définir les clés étrangères (FK) pour établir les relations
+- Appliquer les règles de normalisation
+Conversion en Modèle Relationnel1. Entités et Attributs- Hôtel
+    - ID_Hôtel (PK)
+    - Nom
+    - Adresse
+    - Numéro de téléphone
+- Chambre
+    - ID_Chambre (PK)
+    - Numéro
+    - Type
+    - Prix
+    - ID_Hôtel (FK)
+- Client
+    - ID_Client (PK)
+    - Nom
+    - Prénom
+    - Adresse
+    - Date de naissance
+    - Sexe
+- Réservation
+    - ID_Réservation (PK)
+    - Date de début
+    - Date de fin
+    - ID_Client (FK)
+    - ID_Chambre (FK)
+2. Relations et Cardinalités- Hôtel à Chambre : 1:N (Un hôtel peut avoir plusieurs chambres)
+- Client à Réservation : 1:N (Un client peut faire plusieurs réservations)
+- Chambre à Réservation : 1:N (Une chambre peut être réservée plusieurs fois)
+Diagramme RelationnelVoici une représentation textuelle du modèle relationnel :
+
+Hôtel (ID_Hôtel, Nom, Adresse, Numéro de téléphone)
+  |
+  | 1:N
+  |
+Chambre (ID_Chambre, Numéro, Type, Prix, ID_Hôtel)
+  |
+  | 1:N
+  |
+Réservation (ID_Réservation, Date de début, Date de fin, ID_Client, ID_Chambre)
+  |
+  | N:1
+  |
+Client (ID_Client, Nom, Prénom, Adresse, Date de naissance, Sexe)
+
+Diagramme Relationnel VisuelDiagramme Relationnel
+Ce modèle relationnel est maintenant prêt à être implémenté dans une base de données relationnelle. Si vous avez besoin d'une visualisation graphique plus détaillée ou d'une aide supplémentaire, n'hésitez pas à me le faire savoir !
